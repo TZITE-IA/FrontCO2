@@ -1,0 +1,52 @@
+<header  id="main-header" >
+  <a id="acount-header" style="cursor:pointer" routerLink="inicio" routerLinkActive="" [routerLinkActiveOptions]="{exact: true}">
+    <span class="site-name">DT-CO2</span>
+  </a> <!-- / #logo-header -->
+  <nav *ngIf="login" >
+    <a id="logo-header" style="cursor:pointer; text-align:left">
+      <span class="site-name" (click)="logOut()" routerLink="" routerLinkActive="" [routerLinkActiveOptions]="{exact: true}"> Salir  </span>
+    </a>
+    <a id="logo-header" >
+      <span class="site-name" (click)="logOut()">   </span>
+    </a>
+  </nav>
+
+</header>
+<div *ngIf="!login" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+  <app-login (login)="validate($event)"></app-login>
+</div>
+
+<div *ngIf="login">
+
+
+  <div class="row container mt-4">
+
+  <div class="col-3">
+    <h2>Busquedas</h2>
+    <hr>
+    <div class="row">
+      <form autocomplete="on">
+        <input type="text" name="termino" class="form-control" placeholder="Buscar sensor..."/>
+        </form>
+  <hr>
+  <div >
+      No se encuentra nada con esas características...
+    </div>
+  </div>
+      <ul class="list-group">
+        <li routerLink="inicio" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="list-group-item">Inicio</li>
+        <li routerLink="hora" routerLinkActive="active" class="list-group-item">Por hora</li>
+        <li routerLink="dia" routerLinkActive="active" class="list-group-item">Por día</li>
+        <li routerLink="semana" routerLinkActive="active" class="list-group-item">Por semana</li>
+      </ul>
+    </div>
+
+    <div class="col">
+      <router-outlet></router-outlet>
+      <hr>
+    </div>
+
+  </div>
+
+</div>
+

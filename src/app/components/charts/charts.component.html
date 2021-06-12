@@ -1,0 +1,10 @@
+<div *ngFor="let graph of graphs;let i = index">
+    <div routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+      <ngx-charts-line-chart [view]="view" [scheme]="{domain:[colorScheme.domain[i]]}" [legend]="legend" [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel" [xAxis]="xAxis" [yAxis]="yAxis" [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel" [timeline]="timeline" [results]="[graph]" (select)="onSelect($event)"
+        (activate)="onActivate($event)" (deactivate)="onDeactivate($event)">
+  
+      </ngx-charts-line-chart>
+    </div>
+  </div>

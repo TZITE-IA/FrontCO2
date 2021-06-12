@@ -1,0 +1,23 @@
+<div class="container login-form">
+	<h2 class="login-title">- Panel de acceso -</h2>
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<form>
+				<div class="input-group login-userinput">
+					<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+					<input [(ngModel)]="user" type="text" class="form-control" name="username" placeholder="Usuario">
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+					<input  [(ngModel)]="pwd" type="password" class="form-control" name="password" placeholder="Contraseña">
+				</div>
+				<button class="btn btn-primary btn-block login-button" (click)=verify()><i class="fa fa-sign-in"></i> Acceso </button>
+        <h3 class="login-forgot" style="color:rgb(225, 0, 0)"> {{error}} </h3>
+				<div class="checkbox login-options">
+					<label><input type="checkbox"/> Mantener sessión</label>
+					<a href="#" class="login-forgot">¿Olvido Usuario/Contraseña?</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
